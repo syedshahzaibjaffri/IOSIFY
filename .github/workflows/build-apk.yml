@@ -27,11 +27,13 @@ jobs:
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v4
+
       - name: Install Android SDK Packages
         run: |
           sdkmanager --install \
             "platforms;android-36" \
             "build-tools;36.0.0"
+
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v6
         with:
@@ -52,10 +54,19 @@ jobs:
       - name: Build iOSify APK
         run: gradle --no-daemon :app:assembleDebug
 
+      - name: Verify APK
+        run: |
+          APK="app/build/outputs/apk/debug/app-debug.apk"
+          test -f "$APK"
+          test -s "$APK"
+          file "$APK"
+          sha256sum "$APK"
+
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: iosify-debug-apk
-          path: app/build/outputs/apk/debug/*.apk
+          path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
+          compression-level: 0
           retention-days: 7
