@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">iOSify</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_screenshots">Screenshots</string>
+    <string name="nav_emojis">Emojis</string>
+    <string name="nav_text">Text</string>
+    <string name="nav_settings">Settings</string>
+    <string name="home_subtitle">AI-Powered iOS Style Studio</string>
+    <string name="action_upload_screenshot">Upload Screenshot</string>
+    <string name="action_create_text">Create Text Design</string>
+    <string name="action_emoji_converter">Emoji Studio</string>
+    <string name="action_new_project">New Blank Canvas</string>
+    <string name="consent_title">AI Processing Consent</string>
+    <string name="consent_body">iOSify sends your selected screenshot securely to Google Gemini via Firebase AI Logic to detect English/Urdu text, emojis, and iOS layout styling. Your images stay private on-device until you confirm.</string>
+    <string name="consent_accept">Continue with AI</string>
+    <string name="consent_cancel">Cancel</string>
+</resources>
